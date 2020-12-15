@@ -152,8 +152,26 @@ Resolva as duas questões para demonstrar competência.
 ![Diagrama](./arquivos/nfa-repr-q1.svg)
 
 1. O que faz com que o autômato seja classificado como um NFA e não um DFA?
+
+Na saida do estado 'A' serão percorrido paralelamente os estados 'B' e 'C'.
+
+
 2. Mostre o conjunto de estados que o autômato percorre para analisar as strings: a) `42` b) `3.14` c) `123.` e diga em cada caso se a string foi aceita ou não. 
+
+42 - CAMINHO: AB -> Aceito "No caminho paralelo não é aceito."
+3.14 - CAMINHO: ACDE -> Aceito "No caminho paralelo não é aceito."
+123. - NÃO ACEITO, é necessario que se tenha ao menos um algarismo apos o ponto.
+
+![Imagemnfa_2](./imagens/imagens_automatos/nfa-repr-2.png)
+
+
 3. Proponha uma mudança simples para transformá-lo em um DFA sem alterar a linguagem que ele representa.
+
+O estado 'B' torna-se desnecessario quando 'C' é adicionado ao o conjunto de estados terminais. Com essa alteração passa-se a exixtir um unico caminho.
+
+![Imagemnfa_3](./imagens/imagens_automatos/nfa-repr-3.png)
+
+
 
 **Q2)** Crie um autômato não-determinístico finito equivalente às linguagens abaixo. Em cada caso, faça um diagrama de operação do autômato, enfatizando as transições, estado inicial e estados de aceite e monte separadamente a tabela de transição. 
 
