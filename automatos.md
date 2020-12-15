@@ -6,8 +6,46 @@ Autômatos
 **Q1)** Crie um autômato determinístico finito equivalente às linguagens abaixo. Em cada caso, faça um diagrama de operação do autômato, enfatizando as transições, estado inicial e estados de aceite e monte separadamente a tabela de transição. 
 
 1. Sequências de a's e b's em que os a's aparecem em pares. Ex.: aa, baab, bbb, aaaab
+
+![Imagem1_a](./imagens/imagens_automatos/1_a.png)
+
+
+| f(estado) | a | b |
+| :---: | :---: | :---: |
+|  q0 |  q1 | q0 |
+|  q1 |  q0 | q2 |
+|  q2 |  q2 | q2 |
+|
+
+*Ex: aa: * q0(Estado inicial) -> q1 -> q0(Estado final)
+
+
 2. Sequências de a's e b's com um número par de a's. Ex.: aa, abba, abaabbba
+
+![Imagem1_b](./imagens/imagens_automatos/1_b.png)
+
+| f(estado) | a | b |
+| :---: | :---: | :---: |
+|  q0 |  q1 | q0 |
+|  q1 |  q0 | q1 |
+|
+
+*Ex: aa: * q0(Estado inicial) -> q1 -> q0(Estado final)
+
 3. Sequências de a's e b's que contenham pelo menos uma ocorrência de cada letra.
+
+![Imagem1_c](./imagens/imagens_automatos/1_c.png)
+
+| f(estado) | a | b |
+| :---: | :---: | :---: |
+|  q0 |  q1 | q3 |
+|  q1 |  q1 | q2 |
+|  q2 |  q2 | q2 |
+|  q3 |  q2 | q3 |
+|
+
+*Ex: ab: * q0(Estado inicial) -> q1 -> q2(Estado final)
+
 
 Resolva 1 exemplo para demonstrar competência.
 
@@ -20,8 +58,90 @@ Resolva as duas questões para demonstrar competência.
 
 ![Diagrama](./arquivos/dfa-prog-q1.svg)
 
+
+```python
+def afd(delta, estado_inicial, estados_aceitacao, sequencia):
+        
+    estado_atual = estado_inicial    
+    caminho_automato = []
+    caminho_automato.append(estado_atual)
+    # print('estado_atual:', estado_atual)
+
+    for simbolo in sequencia:
+        estado_atual = delta[(estado_atual, simbolo)]
+        caminho_automato.append(estado_atual)
+
+    # print('Caminho: ', caminho_automato)
+
+    return estado_atual in estados_aceitacao
+    
+#---------------------------------
+automato = {
+        # A
+        ('A','b'):'B',
+        # B
+        ('B','a'):'B',
+        ('B','c'):'C',
+        ('B','b'):'D',
+        # C
+        ('C','a'):'B',
+        #D
+        ('D','b'):'A'}
+# ------------------------------
+
+estado_inicial = 'A'
+estado_final = ['D']
+string_testa = input("Entre com a string: ")
+resposta = afd(automato, estado_inicial, estado_final,str(string_testa))# -> True3
+
+if resposta:
+    print('Aceito')
+else:
+    print('Rejeitado')
+```
+
 **Q2)** Modifique uma cópia do programa da seção anterior em que o estado inicial seja B e o conjunto de estados de aceite seja {C}.
 
+```python
+def afd(delta, estado_inicial, estados_aceitacao, sequencia):
+        
+    estado_atual = estado_inicial    
+    caminho_automato = []
+    caminho_automato.append(estado_atual)
+    # print('estado_atual:', estado_atual)
+
+    for simbolo in sequencia:
+        estado_atual = delta[(estado_atual, simbolo)]
+        caminho_automato.append(estado_atual)
+
+    # print('Caminho: ', caminho_automato)
+
+    return estado_atual in estados_aceitacao
+    
+#---------------------------------
+automato = {
+        # A
+        ('A','b'):'B',
+        # B
+        ('B','a'):'B',
+        ('B','c'):'C',
+        ('B','b'):'D',
+        # C
+        ('C','a'):'B',
+        #D
+        ('D','b'):'A'}
+# ------------------------------
+
+estado_inicial = 'B'
+estado_final = ['C']
+string_testa = input("Entre com a string: ")
+resposta = afd(automato, estado_inicial, estado_final,str(string_testa))# -> True3
+
+if resposta:
+    print('Aceito')
+else:
+    print('Rejeitado')
+```
 
 ## [nfa-repr]: Entender o mecanismo de operação de um autônomo não-determinístico finito
 
