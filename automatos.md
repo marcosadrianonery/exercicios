@@ -9,6 +9,7 @@ Autômatos
 2. Sequências de a's e b's com um número par de a's. Ex.: aa, abba, abaabbba
 3. Sequências de a's e b's que contenham pelo menos uma ocorrência de cada letra.
 
+
 Resolva 1 exemplo para demonstrar competência.
 
 
