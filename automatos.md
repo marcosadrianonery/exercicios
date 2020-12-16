@@ -6,7 +6,7 @@ Autômatos
 **Q1)** Crie um autômato determinístico finito equivalente às linguagens abaixo. Em cada caso, faça um diagrama de operação do autômato, enfatizando as transições, estado inicial e estados de aceite e monte separadamente a tabela de transição. 
 
 1. Sequências de a's e b's em que os a's aparecem em pares. Ex.: aa, baab, bbb, aaaab
-
+```
 ![Imagem1_a](./imagens/imagens_automatos/1_a.png)
 
 
@@ -19,9 +19,9 @@ Autômatos
 
 **Ex: aa:** q0(Estado inicial) -> q1 -> q0(Estado final)
 
-
+```
 2. Sequências de a's e b's com um número par de a's. Ex.: aa, abba, abaabbba
-
+```
 ![Imagem1_b](./imagens/imagens_automatos/1_b.png)
 
 | f(estado) | a | b |
@@ -31,9 +31,9 @@ Autômatos
 |
 
 **Ex: aa:** q0(Estado inicial) -> q1 -> q0(Estado final)
-
+```
 3. Sequências de a's e b's que contenham pelo menos uma ocorrência de cada letra.
-
+```
 ![Imagem1_c](./imagens/imagens_automatos/1_c.png)
 
 | f(estado) | a | b |
@@ -46,7 +46,7 @@ Autômatos
 
 **Ex: ab:** q0(Estado inicial) -> q1 -> q2(Estado final)
 
-
+```
 Resolva 1 exemplo para demonstrar competência.
 
 
