@@ -197,10 +197,34 @@ Resolva 1 dos exemplos acima para resolver a questão.
 **Q1)** Utilize a construção de Thompson para criar um NFA-ε para as seguintes expressões regulares.
 
 1. `ab|c`
+
+![Imagemnfa_thompson_1](./imagens/imagens_automatos/nfa-thompson-1.png)
+
+
+
 2. `ab(cd|ε)`
+
+![Imagemnfa_thompson_2](./imagens/imagens_automatos/nfa-thompson-2.png)
+
 3. `a*b*`
+
+![Imagemnfa_thompson_3](./imagens/imagens_automatos/nfa-thompson-3.png)
+
+
 4. `a(b|c)d`
+
+![Imagemnfa_thompson_4](./imagens/imagens_automatos/nfa-thompson-4.png)
+
+
 5. `b(a|b)*a|a`
+
+Considerando o entendimento como: `b(a|b)*(a|a)`
+
+![Imagemnfa_thompson_5_a](./imagens/imagens_automatos/nfa-thompson-5_a.png)
+
+Considerando o entendimento como: `(b(a|b)*a)|(a)`
+
+![Imagemnfa_thompson_5_b](./imagens/imagens_automatos/nfa-thompson-5_b.png)
 
 
 ## [nfa-epsilon]: Conversão de NFA-ε para NFA
