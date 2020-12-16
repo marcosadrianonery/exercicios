@@ -252,6 +252,14 @@ Todos os estados que ele pode estar ao fim é C,D ou E.
 
 ![Diagrama](./arquivos/nfa-epsilon-q2.svg)
 
+
+![Imagemnfa_thompson_2_a](./imagens/imagens_automatos/nfa-epsilon-2-a.png)
+
+
+
+![Imagemnfa_thompson_2_b](./imagens/imagens_automatos/nfa-epsilon-2-B.png)
+
+
 ## [nfa-dfa]: Conversão de NFA para DFA
 
 **Q1)** Converta os autômatos abaixo para DFA.
