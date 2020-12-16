@@ -234,7 +234,19 @@ Considerando o entendimento como: `(b(a|b)*a)|(a)`
 ![Diagrama](./arquivos/nfa-epsilon-q1.svg)
 
 1. O caminho ABEF produz a string `[]`. Encontre um caminho que aceite a string `[aa,a]`.
+
+Caminho ABCDCDCDEF produz a string '[aa,a]
+
 2. A string `[aaa` não é aceita pelo autômato. Determine o conjunto de  **todos** estados em que autômato pode estar após receber esta entrada. 
+
+1 - Um dos caminhos é ABE, fica travado em E;
+2 - Outro caminho é ABCD(E)CD(E)CD(E)C
+
+Ele possa em algum momento pelos estados ABCDE, o unico que não passa é o estado F.
+
+Todos os estados que ele pode estar ao fim é C,D ou E.
+
+
 
 **Q2)** Remova as transições ε dos dois autômatos abaixo.
 
