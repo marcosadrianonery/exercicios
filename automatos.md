@@ -7,7 +7,7 @@ Autômatos
 
 1. Sequências de a's e b's em que os a's aparecem em pares. Ex.: aa, baab, bbb, aaaab
 
-![Imagem1_a](./imagens/imagens_automatos/1_a.png)
+<img src="./imagens/imagens_automatos/1_a.png" width="700">
 
 
 | f(estado) | a | b |
@@ -22,8 +22,7 @@ Autômatos
 ```
 2. Sequências de a's e b's com um número par de a's. Ex.: aa, abba, abaabbba
 
-
-![Imagem1_b](./imagens/imagens_automatos/1_b.png)
+<img src="./imagens/imagens_automatos/1_b.png" width="700">
 
 | f(estado) | a | b |
 | :---: | :---: | :---: |
@@ -36,7 +35,9 @@ Autômatos
 3. Sequências de a's e b's que contenham pelo menos uma ocorrência de cada letra.
 
 
-![Imagem1_c](./imagens/imagens_automatos/1_c.png)
+<img src="./imagens/imagens_automatos/1_c.png" width="700">
+
+
 
 | f(estado) | a | b |
 | :---: | :---: | :---: |
@@ -164,14 +165,14 @@ Na saida do estado 'A' serão percorrido paralelamente os estados 'B' e 'C'.
 3.14 - CAMINHO: ACDE -> Aceito "No caminho paralelo não é aceito."
 123. - NÃO ACEITO, é necessario que se tenha ao menos um algarismo apos o ponto.
 ```
-![Imagemnfa_2](./imagens/imagens_automatos/nfa-repr-2.png)
+<img src="./imagens/imagens_automatos/nfa-repr-2.png" width="700">
 
 
 3. Proponha uma mudança simples para transformá-lo em um DFA sem alterar a linguagem que ele representa.
 ```
 O estado 'B' torna-se desnecessario quando 'C' é adicionado ao o conjunto de estados de aceite. Com essa alteração passa-se a exixtir um unico caminho.
 ```
-![Imagemnfa_3](./imagens/imagens_automatos/nfa-repr-3.png)
+<img src="./imagens/imagens_automatos/nfa-repr-3.png" width="700">
 
 
 
@@ -179,14 +180,17 @@ O estado 'B' torna-se desnecessario quando 'C' é adicionado ao o conjunto de es
 
 1. Sequências de n a's, onde n é um múltiplo de 3 ou 5. Ex.: a{12}, onde 12 = 3 x 4
 
-![Imagemnfa_q2_1](./imagens/imagens_automatos/nfa-repr-Q2.png)
+<img src="./imagens/imagens_automatos/nfa-repr-Q2.png" width="700">
+
 ```
 **Ex: a{12}:** A(Estado inicial) -> B -> C -> B(Estado final)
 ```
 
 2. Sequências de n a's, onde n pode ser dividido em partições de 3 ou 5 elementos. Ex.: a{13}, onde 13 = 3 + 5 + 5
 
-![Imagemnfa_q2_1](./imagens/imagens_automatos/nfa-repr-Q2_B.png)
+
+<img src="./imagens/imagens_automatos/nfa-repr-Q2_B.png" width="700">
+
 ```
 **Ex: a{13}:** A(Estado inicial) -> B -> C(Estado final)
 ```
@@ -200,33 +204,35 @@ Resolva 1 dos exemplos acima para resolver a questão.
 
 1. `ab|c`
 
-![Imagemnfa_thompson_1](./imagens/imagens_automatos/nfa-thompson-1.png)
+<img src="./imagens/imagens_automatos/nfa-thompson-1.png" width="700">
 
 
 
 2. `ab(cd|ε)`
 
-![Imagemnfa_thompson_2](./imagens/imagens_automatos/nfa-thompson-2.png)
+<img src="./imagens/imagens_automatos/nfa-thompson-2.png" width="700">
 
 3. `a*b*`
 
-![Imagemnfa_thompson_3](./imagens/imagens_automatos/nfa-thompson-3.png)
+<img src="./imagens/imagens_automatos/nfa-thompson-3.png" width="700">
 
 
 4. `a(b|c)d`
 
-![Imagemnfa_thompson_4](./imagens/imagens_automatos/nfa-thompson-4.png)
+<img src="./imagens/imagens_automatos/nfa-thompson-4.png" width="700">
 
 
 5. `b(a|b)*a|a`
 ```
 Considerando o entendimento como: `b(a|b)*(a|a)`
 ```
-![Imagemnfa_thompson_5_a](./imagens/imagens_automatos/nfa-thompson-5_a.png)
+
+<img src="./imagens/imagens_automatos/nfa-thompson-5_a.png" width="700">
 ```
 Considerando o entendimento como: `(b(a|b)*a)|(a)`
 ```
-![Imagemnfa_thompson_5_b](./imagens/imagens_automatos/nfa-thompson-5_b.png)
+
+<img src="./imagens/imagens_automatos/nfa-thompson-5_b.png" width="700">
 
 
 ## [nfa-epsilon]: Conversão de NFA-ε para NFA
@@ -255,12 +261,10 @@ Todos os estados que ele pode estar ao fim é C,D ou E.
 ![Diagrama](./arquivos/nfa-epsilon-q2.svg)
 
 
-![Imagemnfa_thompson_2_a](./imagens/imagens_automatos/nfa-epsilon-2-a.png)
+<img src="./imagens/imagens_automatos/nfa-epsilon-2-a.png" width="700">
 
 
-
-![Imagemnfa_thompson_2_b](./imagens/imagens_automatos/nfa-epsilon-2-B.png)
-
+<img src="./imagens/imagens_automatos/nfa-epsilon-2-B.png" width="700">
 
 ## [nfa-dfa]: Conversão de NFA para DFA
 
@@ -283,7 +287,7 @@ f({E},b) = {}
 ```
 
 
-![Imagemnfa_dfa_a](./imagens/imagens_automatos/nfa-dfa_a_conv.png)
+<img src="./imagens/imagens_automatos/nfa-dfa_a_conv.png" width="700">
 
 ```
 Transformação 'B':
@@ -293,4 +297,5 @@ O estado inicial é equivalente a: A -> A,B,D
 f({A, B, D},a) = {B, C, D}
 f({B, C, D},a) = {B, C, D}
 ```
-![Imagemnfa_dfa_b](./imagens/imagens_automatos/nfa-dfa_b_conv_2.png)
+
+<img src="./imagens/imagens_automatos/nfa-dfa_b_conv_2.png" width="700">
