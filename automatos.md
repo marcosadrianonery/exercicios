@@ -167,7 +167,7 @@ Na saida do estado 'A' serão percorrido paralelamente os estados 'B' e 'C'.
 
 3. Proponha uma mudança simples para transformá-lo em um DFA sem alterar a linguagem que ele representa.
 
-O estado 'B' torna-se desnecessario quando 'C' é adicionado ao o conjunto de estados terminais. Com essa alteração passa-se a exixtir um unico caminho.
+O estado 'B' torna-se desnecessario quando 'C' é adicionado ao o conjunto de estados de aceite. Com essa alteração passa-se a exixtir um unico caminho.
 
 ![Imagemnfa_3](./imagens/imagens_automatos/nfa-repr-3.png)
 
@@ -176,7 +176,18 @@ O estado 'B' torna-se desnecessario quando 'C' é adicionado ao o conjunto de es
 **Q2)** Crie um autômato não-determinístico finito equivalente às linguagens abaixo. Em cada caso, faça um diagrama de operação do autômato, enfatizando as transições, estado inicial e estados de aceite e monte separadamente a tabela de transição. 
 
 1. Sequências de n a's, onde n é um múltiplo de 3 ou 5. Ex.: a{12}, onde 12 = 3 x 4
+
+![Imagemnfa_q2_1](./imagens/imagens_automatos/nfa-repr-Q2.png)
+
+*Ex: a{12}: * A(Estado inicial) -> B -> C -> B(Estado final)
+
+
 2. Sequências de n a's, onde n pode ser dividido em partições de 3 ou 5 elementos. Ex.: a{13}, onde 13 = 3 + 5 + 5
+
+![Imagemnfa_q2_1](./imagens/imagens_automatos/nfa-repr-Q2_B.png)
+
+*Ex: a{13}: * A(Estado inicial) -> B -> C(Estado final)
+
 
 Resolva 1 dos exemplos acima para resolver a questão.
 
