@@ -224,21 +224,12 @@ Resolva 1 dos exemplos acima para resolver a questão.
 
 5. `b(a|b)*a|a`
 ```
-<<<<<<< HEAD
 Considerando o entendimento como: b(a|b)*(a|a)
 ```
 
 <img src="./imagens/imagens_automatos/nfa-thompson-5_a_2.png" width="800">
 ```
 Considerando o entendimento como: (b(a|b)*a)|(a)
-=======
-Considerando o entendimento como: `b(a|b)*(a|a)`
-```
-
-<img src="./imagens/imagens_automatos/nfa-thompson-5_a.png" width="800">
-```
-Considerando o entendimento como: `(b(a|b)*a)|(a)`
->>>>>>> 6eea9f18b6ebf1b94cc37f60bfb9854b5018bc1e
 ```
 
 <img src="./imagens/imagens_automatos/nfa-thompson-5_b.png" width="800">
