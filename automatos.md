@@ -228,6 +228,7 @@ Considerando o entendimento como: b(a|b)*(a|a)
 ```
 
 <img src="./imagens/imagens_automatos/nfa-thompson-5_a_2.png" width="800">
+
 ```
 Considerando o entendimento como: (b(a|b)*a)|(a)
 ```
