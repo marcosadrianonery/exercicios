@@ -17,7 +17,7 @@ Autômatos
 |  q2 |  q2 | q2 |
 |
 
-*Ex: aa: * q0(Estado inicial) -> q1 -> q0(Estado final)
+**Ex: aa: ** q0(Estado inicial) -> q1 -> q0(Estado final)
 
 
 2. Sequências de a's e b's com um número par de a's. Ex.: aa, abba, abaabbba
@@ -30,7 +30,7 @@ Autômatos
 |  q1 |  q0 | q1 |
 |
 
-*Ex: aa: * q0(Estado inicial) -> q1 -> q0(Estado final)
+**Ex: aa: ** q0(Estado inicial) -> q1 -> q0(Estado final)
 
 3. Sequências de a's e b's que contenham pelo menos uma ocorrência de cada letra.
 
@@ -44,7 +44,7 @@ Autômatos
 |  q3 |  q2 | q3 |
 |
 
-*Ex: ab: * q0(Estado inicial) -> q1 -> q2(Estado final)
+**Ex: ab: ** q0(Estado inicial) -> q1 -> q2(Estado final)
 
 
 Resolva 1 exemplo para demonstrar competência.
@@ -179,14 +179,14 @@ O estado 'B' torna-se desnecessario quando 'C' é adicionado ao o conjunto de es
 
 ![Imagemnfa_q2_1](./imagens/imagens_automatos/nfa-repr-Q2.png)
 
-*Ex: a{12}: * A(Estado inicial) -> B -> C -> B(Estado final)
+**Ex: a{12}: ** A(Estado inicial) -> B -> C -> B(Estado final)
 
 
 2. Sequências de n a's, onde n pode ser dividido em partições de 3 ou 5 elementos. Ex.: a{13}, onde 13 = 3 + 5 + 5
 
 ![Imagemnfa_q2_1](./imagens/imagens_automatos/nfa-repr-Q2_B.png)
 
-*Ex: a{13}: * A(Estado inicial) -> B -> C(Estado final)
+**Ex: a{13}: ** A(Estado inicial) -> B -> C(Estado final)
 
 
 Resolva 1 dos exemplos acima para resolver a questão.
