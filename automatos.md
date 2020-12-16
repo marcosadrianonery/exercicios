@@ -7,7 +7,7 @@ Autômatos
 
 1. Sequências de a's e b's em que os a's aparecem em pares. Ex.: aa, baab, bbb, aaaab
 
-![Imagem1_a](./imagens/imagens_automatos/1_a.png)
+<img src="./imagens/imagens_automatos/1_a.png" width="800">
 
 
 | f(estado) | a | b |
@@ -16,25 +16,28 @@ Autômatos
 |  q1 |  q0 | q2 |
 |  q2 |  q2 | q2 |
 |
+```
+**Ex: aa:** q0(Estado inicial) -> q1 -> q0(Estado final)
 
-*Ex: aa: * q0(Estado inicial) -> q1 -> q0(Estado final)
-
-
+```
 2. Sequências de a's e b's com um número par de a's. Ex.: aa, abba, abaabbba
 
-![Imagem1_b](./imagens/imagens_automatos/1_b.png)
+<img src="./imagens/imagens_automatos/1_b.png" width="800">
 
 | f(estado) | a | b |
 | :---: | :---: | :---: |
 |  q0 |  q1 | q0 |
 |  q1 |  q0 | q1 |
 |
-
-*Ex: aa: * q0(Estado inicial) -> q1 -> q0(Estado final)
-
+```
+**Ex: aa:** q0(Estado inicial) -> q1 -> q0(Estado final)
+```
 3. Sequências de a's e b's que contenham pelo menos uma ocorrência de cada letra.
 
-![Imagem1_c](./imagens/imagens_automatos/1_c.png)
+
+<img src="./imagens/imagens_automatos/1_c.png" width="800">
+
+
 
 | f(estado) | a | b |
 | :---: | :---: | :---: |
@@ -43,10 +46,10 @@ Autômatos
 |  q2 |  q2 | q2 |
 |  q3 |  q2 | q3 |
 |
+```
+**Ex: ab:** q0(Estado inicial) -> q1 -> q2(Estado final)
 
-*Ex: ab: * q0(Estado inicial) -> q1 -> q2(Estado final)
-
-
+```
 Resolva 1 exemplo para demonstrar competência.
 
 
@@ -152,24 +155,24 @@ Resolva as duas questões para demonstrar competência.
 ![Diagrama](./arquivos/nfa-repr-q1.svg)
 
 1. O que faz com que o autômato seja classificado como um NFA e não um DFA?
-
+```
 Na saida do estado 'A' serão percorrido paralelamente os estados 'B' e 'C'.
-
+```
 
 2. Mostre o conjunto de estados que o autômato percorre para analisar as strings: a) `42` b) `3.14` c) `123.` e diga em cada caso se a string foi aceita ou não. 
-
+```
 42 - CAMINHO: AB -> Aceito "No caminho paralelo não é aceito."
 3.14 - CAMINHO: ACDE -> Aceito "No caminho paralelo não é aceito."
 123. - NÃO ACEITO, é necessario que se tenha ao menos um algarismo apos o ponto.
-
-![Imagemnfa_2](./imagens/imagens_automatos/nfa-repr-2.png)
+```
+<img src="./imagens/imagens_automatos/nfa-repr-2.png" width="800">
 
 
 3. Proponha uma mudança simples para transformá-lo em um DFA sem alterar a linguagem que ele representa.
-
+```
 O estado 'B' torna-se desnecessario quando 'C' é adicionado ao o conjunto de estados de aceite. Com essa alteração passa-se a exixtir um unico caminho.
-
-![Imagemnfa_3](./imagens/imagens_automatos/nfa-repr-3.png)
+```
+<img src="./imagens/imagens_automatos/nfa-repr-3.png" width="800">
 
 
 
@@ -177,17 +180,20 @@ O estado 'B' torna-se desnecessario quando 'C' é adicionado ao o conjunto de es
 
 1. Sequências de n a's, onde n é um múltiplo de 3 ou 5. Ex.: a{12}, onde 12 = 3 x 4
 
-![Imagemnfa_q2_1](./imagens/imagens_automatos/nfa-repr-Q2.png)
+<img src="./imagens/imagens_automatos/nfa-repr-Q2.png" width="800">
 
-*Ex: a{12}: * A(Estado inicial) -> B -> C -> B(Estado final)
-
+```
+**Ex: a{12}:** A(Estado inicial) -> B -> C -> B(Estado final)
+```
 
 2. Sequências de n a's, onde n pode ser dividido em partições de 3 ou 5 elementos. Ex.: a{13}, onde 13 = 3 + 5 + 5
 
-![Imagemnfa_q2_1](./imagens/imagens_automatos/nfa-repr-Q2_B.png)
 
-*Ex: a{13}: * A(Estado inicial) -> B -> C(Estado final)
+<img src="./imagens/imagens_automatos/nfa-repr-Q2_B.png" width="800">
 
+```
+**Ex: a{13}:** A(Estado inicial) -> B -> C(Estado final)
+```
 
 Resolva 1 dos exemplos acima para resolver a questão.
 
@@ -198,33 +204,35 @@ Resolva 1 dos exemplos acima para resolver a questão.
 
 1. `ab|c`
 
-![Imagemnfa_thompson_1](./imagens/imagens_automatos/nfa-thompson-1.png)
+<img src="./imagens/imagens_automatos/nfa-thompson-1.png" width="800">
 
 
 
 2. `ab(cd|ε)`
 
-![Imagemnfa_thompson_2](./imagens/imagens_automatos/nfa-thompson-2.png)
+<img src="./imagens/imagens_automatos/nfa-thompson-2.png" width="800">
 
 3. `a*b*`
 
-![Imagemnfa_thompson_3](./imagens/imagens_automatos/nfa-thompson-3.png)
+<img src="./imagens/imagens_automatos/nfa-thompson-3.png" width="800">
 
 
 4. `a(b|c)d`
 
-![Imagemnfa_thompson_4](./imagens/imagens_automatos/nfa-thompson-4.png)
+<img src="./imagens/imagens_automatos/nfa-thompson-4.png" width="800">
 
 
 5. `b(a|b)*a|a`
+```
+Considerando o entendimento como: b(a|b)*(a|a)
+```
 
-Considerando o entendimento como: `b(a|b)*(a|a)`
+<img src="./imagens/imagens_automatos/nfa-thompson-5_a_2.png" width="800">
+```
+Considerando o entendimento como: (b(a|b)*a)|(a)
+```
 
-![Imagemnfa_thompson_5_a](./imagens/imagens_automatos/nfa-thompson-5_a.png)
-
-Considerando o entendimento como: `(b(a|b)*a)|(a)`
-
-![Imagemnfa_thompson_5_b](./imagens/imagens_automatos/nfa-thompson-5_b.png)
+<img src="./imagens/imagens_automatos/nfa-thompson-5_b.png" width="800">
 
 
 ## [nfa-epsilon]: Conversão de NFA-ε para NFA
@@ -234,18 +242,18 @@ Considerando o entendimento como: `(b(a|b)*a)|(a)`
 ![Diagrama](./arquivos/nfa-epsilon-q1.svg)
 
 1. O caminho ABEF produz a string `[]`. Encontre um caminho que aceite a string `[aa,a]`.
-
+```
 Caminho ABCDCDCDEF produz a string '[aa,a]
-
+```
 2. A string `[aaa` não é aceita pelo autômato. Determine o conjunto de  **todos** estados em que autômato pode estar após receber esta entrada. 
-
+```
 1 - Um dos caminhos é ABE, fica travado em E;
 2 - Outro caminho é ABCD(E)CD(E)CD(E)C
 
 Ele possa em algum momento pelos estados ABCDE, o unico que não passa é o estado F.
 
 Todos os estados que ele pode estar ao fim é C,D ou E.
-
+```
 
 
 **Q2)** Remova as transições ε dos dois autômatos abaixo.
@@ -253,12 +261,10 @@ Todos os estados que ele pode estar ao fim é C,D ou E.
 ![Diagrama](./arquivos/nfa-epsilon-q2.svg)
 
 
-![Imagemnfa_thompson_2_a](./imagens/imagens_automatos/nfa-epsilon-2-a.png)
+<img src="./imagens/imagens_automatos/nfa-epsilon-2-a.png" width="800">
 
 
-
-![Imagemnfa_thompson_2_b](./imagens/imagens_automatos/nfa-epsilon-2-B.png)
-
+<img src="./imagens/imagens_automatos/nfa-epsilon-2-B.png" width="800">
 
 ## [nfa-dfa]: Conversão de NFA para DFA
 
@@ -267,7 +273,7 @@ Todos os estados que ele pode estar ao fim é C,D ou E.
 ![Diagrama](./arquivos/nfa-dfa.svg)
 
 Resolva dois autômatos para demonstrar competência.
-
+```
 Transformação 'A':
 
 O estado inicial é equivalente a: A -> A,B,C
@@ -278,19 +284,18 @@ f({D},a) = {}
 f({D},b) = {E}
 f({E},a) = {C}
 f({E},b) = {}
+```
 
 
+<img src="./imagens/imagens_automatos/nfa-dfa_a_conv.png" width="800">
 
-![Imagemnfa_dfa_a](./imagens/imagens_automatos/nfa-dfa_a_conv.png)
-
-
-
-
+```
 Transformação 'B':
 
 O estado inicial é equivalente a: A -> A,B,D
 
 f({A, B, D},a) = {B, C, D}
 f({B, C, D},a) = {B, C, D}
+```
 
-![Imagemnfa_dfa_b](./imagens/imagens_automatos/nfa-dfa_b_conv_2.png)
+<img src="./imagens/imagens_automatos/nfa-dfa_b_conv_2.png" width="800">
