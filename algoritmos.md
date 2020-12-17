@@ -23,6 +23,29 @@ Algoritmos de analise sintática
 4.  S ⟶ n
 ```
 
+
+||+|*|~|n|
+| :---: | :---: | :---: | :---: | :---: |
+|S|1|2|3|4|
+
+* Exemplo
+
+input = + 3 4 
+
+Estado:
+[S]
+-> Em 'S' o simbolo '+' aponta para a linha 1.
+[+ S S]
+-> Em 'S' o simbolo '3' aponta para a linha 4.
+[+ 4 S]
+-> Em 'S' o simbolo '4' aponta para a linha 4.
+[+ 4 4]
+
+---> Os passos em que os tokens são dispensados e não são mostrados para uma resolução mais limpa.
+
+
+
+
 ## G3
 ```
 1.  S ⟶ S + S
@@ -126,10 +149,6 @@ assert parse(src) == ["a", "b", ("c", "d"), ["ab", "cd", "ef"]]
 ```
 
 
-
-||+|*|~|n|
-| :---: | :---: | :---: | :---: | :---: |
-|S|1|2|3|4|
 
 
 ## G3
