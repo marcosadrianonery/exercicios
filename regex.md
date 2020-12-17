@@ -72,10 +72,10 @@ Encontre o maior dicionário possível com esta propriedade.
 
 **Q1)** Reescreva as expressões regulares Python utilizando apenas os operadores básicos de alternativa (`|`), repetição (`*`), concatenação e produções ε.
 
-1. `r"[a-c]*"   -> (a|b|c)*`
-2. `r"[ab]+"    ->  (a|b)*`
-3. `r"a?b?c?"   ->  (a|ab|ac|b|bc|c|abc)`
-4. `r"[abde]|ab|c?" ->  (a|b|d|e)|ab|c`
+1. `r"[a-c]*"`   -> (a|b|c)*
+2. `r"[ab]+"`    ->  (a|b)*
+3. `r"a?b?c?"`   ->  (a|ab|ac|b|bc|c|abc)
+4. `r"[abde]|ab|c?"` ->  (a|b|d|e)|ab|c
 
 ## [re-pat]: Aplicar expressões regulares para encontrar padrões de texto simples em um documento
 
