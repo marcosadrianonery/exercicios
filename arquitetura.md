@@ -47,11 +47,13 @@ A tradução do código de alto nível para o código do processador está assoc
 ```
 
 **Q2)** É um erro comum acreditar que "compilada" vs "interpretada" é um uma característica da linguagem de programação. Estas são características de implementações específicas da linguagem. Ainda que a implementação de Python criada por Guido seja interpretada ou que a versão do C que presente no GCC seja compilada, nada impede se crie versões compiladas de Python ou interpretadas de C. Encontre pelo menos um exemplo de implementação de um compilador para uma linguagem normalmente tida como interpretada ou de um interpretador para uma linguagem normalmente tida como compilada. Forneça uma referência como link, artigo, etc que aponte para o projeto escolhido. 
-´´´
-Linguagem python normalmente interpretada, um compilador pode ser encontrado no endereço: http://py2exe.org/ o desenvolvimento está hospedado em: https://github.com/py2exe/py2exe
 
-Linguagem 'C' normalmente compilada, um interpretador pode ser encontrado no endereço(mais informações): https://www.softintegration.com/ o download pode ser feito em: https://download.cnet.com/Ch-Professional-64-bit/3000-2247_4-75833264.html
-´´´
+
+* Linguagem python normalmente interpretada, um compilador pode ser encontrado no endereço: http://py2exe.org/ o desenvolvimento está hospedado em: https://github.com/py2exe/py2exe
+
+* Linguagem 'C' normalmente compilada, um interpretador pode ser encontrado no endereço(mais informações): https://www.softintegration.com/ o download pode ser feito em: https://download.cnet.com/Ch-Professional-64-bit/3000-2247_4-75833264.html
+
+
 
 ## [parser-fmt]: Compreender a relevância das técnicas de compiladores no processamento de arquivos.
 
