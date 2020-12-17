@@ -13,6 +13,7 @@ Algoritmos de analise sintática
 4.  S ⟶ S S
 5.  S ⟶ S | S
 ```
+* Em dado momento é impossivel distinguir-se das regras 3, 4 e 5.
 
 ## G2
 ```
@@ -30,6 +31,8 @@ Algoritmos de analise sintática
 4.  S ⟶ ( S )
 5.  S ⟶ n
 ```
+* Em dado momento é impossivel distinguir-se das regras 1 e 2.
+
 
 ## [rd-prog]: Implementar gramática simples usando descida recursiva
 
@@ -121,6 +124,13 @@ assert parse(src) == ["a", "b", ("c", "d"), ["ab", "cd", "ef"]]
 5.  L ⟶ E L
 6.  L ⟶ ε
 ```
+
+
+
+||+|*|~|n|
+| :---: | :---: | :---: | :---: | :---: |
+|S|1|2|3|4|
+
 
 ## G3
 ```
