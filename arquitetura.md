@@ -39,7 +39,7 @@ Arquitetura de compiladores e interpretadores
 * Ambos convertem um codigo de uma linguagem para outra.
 * Enquanto o compilador traduz todas as linhas do codigo de uma unica vez, o interpretador converte cada instrução por vez.
 * Os compiladores costumam ter uma maior velocidade de execução, o maior trabalho é no começo onde todo o código é convertido de uma vez. Não precisar fazer a conversão toda vez que o sistema é executado dá uma eficiência muito maior do que um interpretador. O interpretador faz uma nova conversão a cada execução.
-** Enquanto o codigo convertido pelo compilador apenas executa, o interpretador executa e converte.
+- Enquanto o codigo convertido pelo compilador apenas executa, o interpretador executa e converte.
 
 **Q2)** É um erro comum acreditar que "compilada" vs "interpretada" é um uma característica da linguagem de programação. Estas são características de implementações específicas da linguagem. Ainda que a implementação de Python criada por Guido seja interpretada ou que a versão do C que presente no GCC seja compilada, nada impede se crie versões compiladas de Python ou interpretadas de C. Encontre pelo menos um exemplo de implementação de um compilador para uma linguagem normalmente tida como interpretada ou de um interpretador para uma linguagem normalmente tida como compilada. Forneça uma referência como link, artigo, etc que aponte para o projeto escolhido. 
 
