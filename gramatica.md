@@ -77,6 +77,30 @@ atom : NUMBER
 NUMBER : /\d+/
 ```
 
+```
+
+src:  42  TREE:  Tree('start', [Tree('number', [Token('NUMBER', '42')])])
+Expressão:
+42
+
+src:  2 * (11 + 2 * 5)  
+TREE:  Tree('start', [Tree('pow', [Tree('number', [Token('NUMBER', '2')]), Tree('listing', [Tree('soma', [Tree('number', [Token('NUMBER', '11')]), Tree('pow', [Tree('number', [Token('NUMBER', '2')]), Tree('number', [Token('NUMBER', '5')])])])])])])
+
+                                   Expressão: 2 * (11 + 2 * 5) -> ['*', 2, [['+', 11, ['*', 2, 5]]]]
+                                   /         |              \
+                                  /          |                \
+                                 /           |                  \
+                                "*"          2                   [+, 11, [+, 2, 5]]
+                                                                 /         |      \
+                                                                /          |       \
+                                                               /           |        \
+                                                              "+"          11       [+, 2, 5] 
+                                                                                     /  |   \
+                                                                                    /   |    \
+                                                                                   /    |     \
+                                                                                  "+"   2      5                                 
+```
+
 ## [cfg-ast]: Criar árvore sintática 
 
 **Q1)** Utilize a linguagem definida pela gramática da questão "cfg-cst.Q1" para criar uma classe Transformer que converta o código em uma representação formada por números ou dicionários como nos exemplos.
