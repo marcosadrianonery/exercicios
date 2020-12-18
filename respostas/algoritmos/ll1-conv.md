@@ -8,8 +8,7 @@
 4.  S ⟶ S S
 5.  S ⟶ S | S
 ```
-* Em dado momento é impossivel distinguir-se das regras 3, 4 e 5.
-Possuir ambiguidade e os conjuntos "First" não são disjuntos.
+* Em dado momento é impossivel distinguir-se de algumas regras pois possui ambiguidade.
 
 ## G2
 ```
@@ -18,28 +17,14 @@ Possuir ambiguidade e os conjuntos "First" não são disjuntos.
 3.  S ⟶ ~ S
 4.  S ⟶ n
 ```
+Gramática compatível.
 
 
 ||+|*|~|n|$|
 | :---: | :---: | :---: | :---: | :---: | :--- |
 |S|1|2|3|4||
 
-* Exemplo
-
-input = + 3 4 
-
-Estado:
-[S]
--> Em 'S' o simbolo '+' aponta para a linha 1.
-[+ S S]
--> Em 'S' o simbolo '3' aponta para a linha 4.
-[+ 4 S]
--> Em 'S' o simbolo '4' aponta para a linha 4.
-[+ 4 4]
-
----> Os passos em que os tokens são dispensados e não são mostrados para uma resolução mais limpa.
-
-
+first = {+,*,~,n} Follow = {$}
 
 
 ## G3
@@ -50,5 +35,6 @@ Estado:
 4.  S ⟶ ( S )
 5.  S ⟶ n
 ```
-* Em dado momento é impossivel distinguir-se das regras 1 e 2.
-Possuir ambiguidade e os conjuntos "First" não são disjuntos.
+Gramática compatível.
+
+
