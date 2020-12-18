@@ -10,11 +10,11 @@ Resolva as duas questões para demonstrar competência.
 Na saida do estado 'A' serão percorrido paralelamente os estados 'B' e 'C'.
 
 2. 
-
+```
 42 - CAMINHO: AB -> Aceito "No caminho paralelo não é aceito."
 3.14 - CAMINHO: ACDE -> Aceito "No caminho paralelo não é aceito."
 123. - NÃO ACEITO, é necessario que se tenha ao menos um algarismo apos o ponto.
-
+```
 <img src="/imagens/imagens_automatos/nfa-repr-2.png" width="800">
 
 3. 
