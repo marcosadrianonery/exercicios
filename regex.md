@@ -72,10 +72,12 @@ Encontre o maior dicionário possível com esta propriedade.
 
 **Q1)** Reescreva as expressões regulares Python utilizando apenas os operadores básicos de alternativa (`|`), repetição (`*`), concatenação e produções ε.
 
-1. `r"[a-c]*"`   -> (a|b|c)*
-2. `r"[ab]+"`    ->  (a|b)*
-3. `r"a?b?c?"`   ->  (a|ab|ac|b|bc|c|abc)
-4. `r"[abde]|ab|c?"` ->  (a|b|d|e)|ab|c
+1. `r"[a-c]*"`
+2. `r"[ab]+"`
+3. `r"a?b?c?"`
+4. `r"[abde]|ab|c?"`
+
+
 
 ## [re-pat]: Aplicar expressões regulares para encontrar padrões de texto simples em um documento
 
@@ -83,200 +85,14 @@ Esta competência testa a capacidade de utilizar expressões regulares em ferram
 
 **Q1)** O script em [arquivos/re-pat-q1.py] gera um texto que contêm várias datas no formato americano MM/DD/AAAA. Use uma regra de substituição que converta todas estas datas para o formato brasileiro DD/MM/AAAA. Diga qual expressão regular e qual regra de substituição foi utilizada no seu editor de código.  
 
-```python
-import random
-from faker import Faker
-import re
-fake = Faker("la")
-
-regex = r"([0-9][0-9][/])+"
-
-def with_date(frase):
-    date = fake.date_object()
-    date = f"{date.month:02}/{date.day:02}/{date.year:04}"
-    return frase.replace(random.choice(frase.split()[:-1]), date)
-
-
-if __name__ == "__main__":
-    for i in range(random.randint(3, 20)):
-        for i in range(random.randint(4, 20)):
-            frase = fake.sentence()
-            if random.random() < 0.25:
-                frase = with_date(frase)
-
-            if re.search(regex, str(frase)):
-                string = re.search(regex, str(frase)).group(0)
-                frase = re.sub( string, string[3] + string[4] + '/' + string[0] + string[1] + '/', frase)
-
-```
- 
- * Foi-se usado a REGEX e a condição abaixo.
- 
-```python
-regex = r"([0-9][0-9][/])+"
-```
-
-```python
-            if re.search(regex, str(frase)):
-                string = re.search(regex, str(frase)).group(0)
-                frase = re.sub( string, string[3] + string[4] + '/' + string[0] + string[1] + '/', frase)
-
-```
-
-
 **Q2)** O arquivo [arquivos/re-pat-q2.py] gera um html algumas tags `<img>` que fazem referências a arquivos ".gif" como em `<img src="path-to-img.gif">`. Crie uma expressão regular que encontre todas extensões `.gif` **que aparecem dentro do atributo src das tags de img**. Descreva como você poderia utilizar esta expressão em conjunto com alguma outra ferramenta para contar o número de ocorrências destas imagens no documento.
 
-```python
-import random
-from faker import Faker
-import re
-fake = Faker("la")
-
-regex = r"(src=\")([-\/\]|[\w0-9])*(.gif\">)"
-
-
-def replace_word(st, by):
-    word = random.choice(st.split())
-    if not word[-1].isalnum():
-        by += word[-1]
-    return st.replace(word, by)
-
-
-def h(n=None):
-    n = n or random.randint(1, 6)
-    return f'<h{n}>{fake.sentence().strip(".")}</h{n}>'
-
-
-def p():
-    text = fake.paragraph(nb_sentences=10)
-    if random.random() < 0.33:
-        text = replace_word(text, img())
-    elif random.random() < 0.50:
-        text = replace_word(text, img_file())
-
-    return f"<p>{text}"
-
-
-def img():
-    return f'<img src="{img_file()}">'
-
-
-def img_file():
-    if random.random() < 0.5:
-        return fake.file_path(extension="gif")
-    else:
-        return fake.file_path(category="image")
-
-
-if __name__ == "__main__":
-    print("<!DOCTYPE html>")
-    print("<head><title>Lorem ipsum</title></head>\n")
-    print("<body>")
-    h(1)
-
-    contgif = 0
-    for i in range(random.randint(10, 20)):
-
-        string = random.choice([h, p, p, img])()
-        # print(random.choice([h, p, p, img])())
-        print(string)
-        print()
-
-        if re.search(regex, string):
-                stringRe = re.search(regex, str(string)).group(0)
-                contgif = contgif + 1
-
-    print("</body>")
-```
-* REGEX
-```python
-regex = r"(src=\")([-\/\]|[\w0-9])*(.gif\">)"
-
-```
-* DECLARAÇÃO DE VARIAVEL PARA CONTAR
-```python
-contgif = 0
-```
-* CONDIÇÃO PARA ENCONTRAR E CONTAR
-```python
-if re.search(regex, string):
-        stringRe = re.search(regex, str(string)).group(0)
-        contgif = contgif + 1
-```
 
 ## [re-grp]: Aplicar expressões regulares e utilizar grupos e sub-padrões para extrair informação a partir de um texto
 
 **Q1)** Crie um programa para identificar datas no formato `AAAA-MM-DDTHH:MM:SS+HH:MM`, onde tanto a parte da hora (`THH:MM:SS`) quanto a parte do fuso horário (`+HH:MM`) são opcionais. Extraia a informação como um objeto do tipo `datetime.date()` para validar o mês e dia e determine qual data encontrada no texto é a mais próxima do seu aniversário.
 
 O texto de exemplo pode ser gerado pelo arquivo [arquivos/re-grp-q1.py].
-```python
-
-import random
-from random import randint as rint
-from faker import Faker
-import re
-from datetime import datetime
-fake = Faker("la")
-
-regex = r"(([0-9][0-9])|[-])+([T]|[0-9][0-9]|[:]|[+])+"
-
-
-def replace_word(st, by):
-    word = random.choice(st.split())
-    if not word[-1].isalnum():
-        by += word[-1]
-    return st.replace(word, by)
-
-
-def p():
-    text = fake.paragraph(nb_sentences=10)
-    for _ in range(3):
-        if random.random() < 0.5:
-            text = replace_word(text, date())
-    return text
-
-
-def date():
-    date = f"{rint(1000, 2050):04}-{rint(1, 13):02}-{rint(1, 31):02}"
-    if random.random() < 0.33:
-        date += f"T{rint(0, 24):02}:{rint(0, 60):02}"
-        if random.random() < 0.5:
-            date += f"+{rint(0, 24):02}:{random.choice([0, 30]):02}"
-    return date
-
-if __name__ == "__main__":
-
-    maisProximo = 366
-    dias = 366
-
-    for i in range(random.randint(10, 20)):
-        texto = p()
-
-        if re.search(regex, str(texto)):
-
-            string = re.search(regex, str(texto)).group(0)
-            string = string.split("T")
-
-            try:
-
-                data_e_hora = datetime.strptime(string[0], '%Y-%m-%d')
-                nascimento = datetime.strptime(str(data_e_hora.year) + '-09-27', "%Y-%m-%d")
-                difenca1 = abs(data_e_hora - nascimento)
-                difenca2 = abs(data_e_hora - nascimento)
-                difenca = min(difenca1, difenca2)
-                dias = difenca.days
-                
-            except:
-                print("Data invalida!")
-                
-            
-            if int(maisProximo) > int(dias):
-                maisProximo = dias
-                dataMaisProxima = datetime.strptime(str(data_e_hora.year) + '-' + str(data_e_hora.month) + '-' + str(data_e_hora.day) , "%Y-%m-%d")
-
-    print("Data mais proxima: ", dataMaisProxima)
-    print("Menor diferença de dias: ", maisProximo)
-```
 
 
 ## [lex-ler]: Compreender a motivação e mecanismos da análise léxica

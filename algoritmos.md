@@ -13,8 +13,6 @@ Algoritmos de analise sintática
 4.  S ⟶ S S
 5.  S ⟶ S | S
 ```
-* Em dado momento é impossivel distinguir-se das regras 3, 4 e 5.
-Possuir ambiguidade e os conjuntos "First" não são disjuntos.
 
 ## G2
 ```
@@ -24,29 +22,6 @@ Possuir ambiguidade e os conjuntos "First" não são disjuntos.
 4.  S ⟶ n
 ```
 
-
-||+|*|~|n|
-| :---: | :---: | :---: | :---: | :---: |
-|S|1|2|3|4|
-
-* Exemplo
-
-input = + 3 4 
-
-Estado:
-[S]
--> Em 'S' o simbolo '+' aponta para a linha 1.
-[+ S S]
--> Em 'S' o simbolo '3' aponta para a linha 4.
-[+ 4 S]
--> Em 'S' o simbolo '4' aponta para a linha 4.
-[+ 4 4]
-
----> Os passos em que os tokens são dispensados e não são mostrados para uma resolução mais limpa.
-
-
-
-
 ## G3
 ```
 1.  S ⟶ S + S
@@ -55,9 +30,6 @@ Estado:
 4.  S ⟶ ( S )
 5.  S ⟶ n
 ```
-* Em dado momento é impossivel distinguir-se das regras 1 e 2.
-Possuir ambiguidade e os conjuntos "First" não são disjuntos.
-
 
 ## [rd-prog]: Implementar gramática simples usando descida recursiva
 
@@ -140,10 +112,6 @@ assert parse(src) == ["a", "b", ("c", "d"), ["ab", "cd", "ef"]]
 2.  S ⟶ ε
 ```
 
-||a|b|
-| :---: | :---: | :---: |
-|S|1|2|
-
 ## G2
 ```
 1.  S ⟶ E S
@@ -153,9 +121,6 @@ assert parse(src) == ["a", "b", ("c", "d"), ["ab", "cd", "ef"]]
 5.  L ⟶ E L
 6.  L ⟶ ε
 ```
-
-Possuir ambiguidade e os conjuntos "First" não são disjuntos.
-
 
 ## G3
 ```
@@ -168,5 +133,3 @@ Possuir ambiguidade e os conjuntos "First" não são disjuntos.
 7.  R ⟶ E
 8.  R ⟶ ε
 ```
-
-Possuir ambiguidade e os conjuntos "First" não são disjuntos.

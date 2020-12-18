@@ -77,44 +77,6 @@ atom : NUMBER
 NUMBER : /\d+/
 ```
 
-```
-
-src:  42  TREE:  Tree('start', [Tree('number', [Token('NUMBER', '42')])])
-Expressão:
-42
-Pretty:  start
-  number        42
-  
-  
-src:  2 * (11 + 2 * 5)  
-TREE:  Tree('start', [Tree('pow', [Tree('number', [Token('NUMBER', '2')]), Tree('listing', [Tree('soma', [Tree('number', [Token('NUMBER', '11')]), Tree('pow', [Tree('number', [Token('NUMBER', '2')]), Tree('number', [Token('NUMBER', '5')])])])])])])
-
-                                   Expressão: 2 * (11 + 2 * 5) -> ['*', 2, [['+', 11, ['*', 2, 5]]]]
-                                   /         |              \
-                                  /          |                \
-                                 /           |                  \
-                                '*'          2                   ['+', 11, ['*', 2, 5]]
-                                                                 /         |      \
-                                                                /          |       \
-                                                               /           |        \
-                                                              '+'          11       ['*', 2, 5] 
-                                                                                     /  |   \
-                                                                                    /   |    \
-                                                                                   /    |     \
-                                                                                  '+'   2      5        
-
-Pretty:  start
-  pow
-    number      2
-    listing
-      soma
-        number  11
-        pow
-          number        2
-          number        5                                                            
-
-```
-
 ## [cfg-ast]: Criar árvore sintática 
 
 **Q1)** Utilize a linguagem definida pela gramática da questão "cfg-cst.Q1" para criar uma classe Transformer que converta o código em uma representação formada por números ou dicionários como nos exemplos.
@@ -141,61 +103,6 @@ assert ast("1 + 2 * 3") == {"op": "+", "left": 1, "right": {"op": "*", "left": 2
 
 def ast(x):
     return transformer.transform(grammar.parse(src))
-
-assert ast("42") == 42
-assert ast("1 + 1") == ["+", 1, 1]
-assert ast("1 + 2 * 3") == ["+", 1, ["*", 2, 3]]
-```
-
-```python
-import re
-from lark import Lark, InlineTransformer
-from typing import NamedTuple
-import math
-import re
-
-class Symbol(NamedTuple):
-    value: str
-
-grammar = Lark(r"""
-?start  :   expr            -> start               
-
-?expr   : expr "+" term     -> soma
-        |   term
-
-?term   : term "*" atom     -> pow
-        |   atom
-
-?atom   :   NUMBER          -> number
-        | "(" expr ")"      -> listing
-
-NUMBER  :   /\d+/
-%ignore /\s+/
-""")
-
-class LispyTransformer(InlineTransformer):
-
-    def start(self, x):
-        return x
-
-    def soma(self, x, y):
-        return list(["+", x, y])
-
-    def pow(self, x, y):
-        return list(["*", x, y])
-
-    def number(self, x):
-        return int(x)
-
-    def listing(self, x):
-        return list([x])
-
-transformer = LispyTransformer()
-
-def ast(src):
-    retornar_funcao = transformer.transform(grammar.parse(src))
-    print("src: ", src, " Retorno: ", retornar_funcao)
-    return retornar_funcao
 
 assert ast("42") == 42
 assert ast("1 + 1") == ["+", 1, 1]
