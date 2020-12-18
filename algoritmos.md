@@ -138,6 +138,10 @@ assert parse(src) == ["a", "b", ("c", "d"), ["ab", "cd", "ef"]]
 2.  S ⟶ ε
 ```
 
+||a|b|
+| :---: | :---: |
+|S|1|2|
+
 ## G2
 ```
 1.  S ⟶ E S
@@ -148,7 +152,7 @@ assert parse(src) == ["a", "b", ("c", "d"), ["ab", "cd", "ef"]]
 6.  L ⟶ ε
 ```
 
-
+Possuir ambiguidade e os conjuntos "First" não são disjuntos.
 
 
 ## G3
@@ -162,3 +166,5 @@ assert parse(src) == ["a", "b", ("c", "d"), ["ab", "cd", "ef"]]
 7.  R ⟶ E
 8.  R ⟶ ε
 ```
+
+Possuir ambiguidade e os conjuntos "First" não são disjuntos.
