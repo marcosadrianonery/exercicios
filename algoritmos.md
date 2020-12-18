@@ -14,6 +14,7 @@ Algoritmos de analise sintática
 5.  S ⟶ S | S
 ```
 * Em dado momento é impossivel distinguir-se das regras 3, 4 e 5.
+Possuir ambiguidade e os conjuntos "First" não são disjuntos.
 
 ## G2
 ```
@@ -55,6 +56,7 @@ Estado:
 5.  S ⟶ n
 ```
 * Em dado momento é impossivel distinguir-se das regras 1 e 2.
+Possuir ambiguidade e os conjuntos "First" não são disjuntos.
 
 
 ## [rd-prog]: Implementar gramática simples usando descida recursiva
@@ -139,7 +141,7 @@ assert parse(src) == ["a", "b", ("c", "d"), ["ab", "cd", "ef"]]
 ```
 
 ||a|b|
-| :---: | :---: |
+| :---: | :---: | :---: |
 |S|1|2|
 
 ## G2
