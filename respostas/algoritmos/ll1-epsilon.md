@@ -22,7 +22,7 @@ First(S) = {a, ε} Follow(S) = {b, $}
 6.  L ⟶ ε
 ```
 
-Possuir ambiguidade e os conjuntos "First" não são disjuntos.
+Possuir ambiguidade e os conjuntos "First" não disjuntos.
 
 
 ## G3
@@ -37,4 +37,4 @@ Possuir ambiguidade e os conjuntos "First" não são disjuntos.
 8.  R ⟶ ε
 ```
 
-Possuir ambiguidade e os conjuntos "First" não são disjuntos.
+Possuir ambiguidade e os conjuntos "First" não disjuntos.
